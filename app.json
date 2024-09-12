@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "Taskit",
-    "slug": "Taskit",
+    "name": "Siesta",
+    "slug": "Siesta",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -15,16 +15,32 @@
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.siesta.app"
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "package": "com.siesta.app"
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "extra": {
+      "eas": {
+        "projectId": "abaa9006-b2d8-4976-9f0a-a34405b09952"
+      }
+    },
+    "plugins": [
+      "react-native-health",
+      [
+        "expo-calendar",
+        {
+          "calendarPermission": "The app needs to access your calendar."
+        }
+      ]
+    ]
   }
 }

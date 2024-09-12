@@ -9,7 +9,7 @@ const LogoTopLeft = ({profileColor}) => {
     return (
         <View style={styles.headerContainer}>
             <View style={styles.logoContainer}>
-                <Text style={styles.logoText}>SideQuest</Text>
+                <Text style={styles.logoText}>Siesta</Text>
             </View>
             <UserCircleIcon size='40' color={profileColor} />
         </View>
@@ -31,7 +31,7 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
     },
     logoText: {
-        color: '#E63946',
+        color: '#3d3dac',
         fontSize: 20,
         fontWeight: '600',
     },

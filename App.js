@@ -6,11 +6,11 @@ import Index from './Index';
 import { RootSiblingParent } from 'react-native-root-siblings';
 
 export default function App() {
-  return (
-    <Provider store={store}>
-      <RootSiblingParent>
-          <Index />
-      </RootSiblingParent>
-    </Provider>
-  );
+    return (
+        <Provider store={store}>
+            <RootSiblingParent>
+                <Index />
+            </RootSiblingParent>
+        </Provider>
+    );
 }

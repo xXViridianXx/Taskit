@@ -44,17 +44,17 @@ const LoginScreen = ({ navigation }) => {
         behavior='padding'
       >
         <View style={styles.logoContainer}>
-          <Text style={styles.logoText}>SideQuest</Text>
+          <Text style={styles.logoText}>Siesta</Text>
         </View>
 
         <View style={styles.introContainer}>
-          <Text style={styles.introText}>Do Tasks. Earn Money.</Text>
+          <Text style={styles.introText}>Sleep More. Do More.</Text>
         </View>
 
         <View style={styles.inputContainer}>
 
-          <LoginInputs labelText={'Email'} input={email} setInput={setEmail} style={styles.input} color={'#D90429'} boardType='email-address' secure={false} />
-          <LoginInputs labelText={'Password'} input={password} setInput={setPassword} style={styles.input} color={'#D90429'} boardType='default' secure={true} />
+          <LoginInputs labelText={'Email'} input={email} setInput={setEmail} style={styles.input} color={'#3d3dac'} boardType='email-address' secure={false} />
+          <LoginInputs labelText={'Password'} input={password} setInput={setPassword} style={styles.input} color={'#3d3dac'} boardType='default' secure={true} />
 
           <TouchableOpacity onPress={() => { }}>
             <Text style={{ color: '#FFF', fontWeight: 500, padding: 8, fontSize: 12 }}>Forgot Password</Text>
@@ -93,7 +93,7 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#E63946',
+    backgroundColor: '#3d3dac',
   },
 
   signUpContainer: {
@@ -115,14 +115,12 @@ const styles = StyleSheet.create({
     fontStyle: 'italic'
 
   },
-
   introContainer: {
     width: '70%',
     justifyContent: 'center',
     alignItems: 'center',
     marginTop: 5,
     marginBottom: 20
-
   },
   introText: {
     color: '#FFF',
@@ -132,19 +130,7 @@ const styles = StyleSheet.create({
   },
   inputContainer: {
     width: '70%',
-
   },
-  input: {
-    backgroundColor: '#E63946',
-    paddingHorizontal: 8,
-    paddingVertical: 1,
-    borderRadius: 10,
-    marginTop: 15,
-    borderBottomWidth: 2,
-    borderBottomColor: '#D90429',
-    color: '#FFF',
-  },
-
   buttonContainer: {
     width: '70%',
     justifyContent: 'center',
@@ -153,7 +139,7 @@ const styles = StyleSheet.create({
   },
   button: {
     width: '100%',
-    backgroundColor: '#D90429',
+    backgroundColor: '#32328a',
     padding: 15,
     borderRadius: 10,
     alignItems: 'center',
@@ -165,7 +151,7 @@ const styles = StyleSheet.create({
     color: '#FFF'
   },
   buttonOutline: {
-    backgroundColor: '#E63946',
+    backgroundColor: '#3d3dac',
 
   },
   buttonOutlineText: {

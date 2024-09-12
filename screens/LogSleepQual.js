@@ -13,6 +13,10 @@ import NoSideQuests from '../components/NoSideQuests';
 import LogoTopLeft from '../components/LogoTopLeft';
 import SearchBar from '../components/SearchBar';
 
+const logout = async () => {
+    console.log('logging out')
+    await signOut(getAuth())
+}
 const HomeScreen = () => {
 
     const [sleepLogs, setSleepLogs] = useState(null)

@@ -29,13 +29,13 @@ export default LoginInputs
 
 const styles = StyleSheet.create({
     input: {
-        backgroundColor: '#E63946',
+        backgroundColor: '#32328a',
         paddingHorizontal: 8,
         paddingVertical: 10,
         borderRadius: 10,
         marginTop: 15,
-        borderWidth: 2,
-        borderColor: '#D90429',
+        borderWidth: 1,
+        borderColor: '#240046',
         color: '#FFF',
       }
 })

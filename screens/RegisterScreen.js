@@ -1,9 +1,9 @@
 import { KeyboardAvoidingView, StyleSheet, Text, TextInput, TouchableOpacity, View, Button, TouchableWithoutFeedback, Keyboard, Alert } from 'react-native'
 import React, { useState, useLayoutEffect, useEffect } from 'react'
 import LoginInputs from '../components/LoginInputs'
-import { signUp, create} from '../components/Helpers'
+import { authUserSignUp, create} from '../components/Helpers'
 import { getAuth, createUserWithEmailAndPassword } from 'firebase/auth'
-
+import user from '../redux/slices/user'
 
 
 const RegisterScreen = ({ navigation }) => {
@@ -29,7 +29,7 @@ const RegisterScreen = ({ navigation }) => {
         behavior='padding'
       >
         <View style={styles.logoContainer}>
-          <Text style={styles.logoText}>SideQuest</Text>
+          <Text style={styles.logoText}>Siesta</Text>
         </View>
 
         <View style={styles.introContainer}>
@@ -38,16 +38,17 @@ const RegisterScreen = ({ navigation }) => {
 
         <View style={styles.inputContainer}>
 
-          <LoginInputs labelText={'Username'} input={username} setInput={setUsername} style={styles.input} color={'#D90429'} boardType='default' secure={false} />
-          <LoginInputs labelText={'Email'} input={email} setInput={setEmail} style={styles.input} color={'#D90429'} boardType='email-address' secure={false} />
-          <LoginInputs labelText={'Password'} input={password} setInput={setPassword} style={styles.input} color={'#D90429'} boardType='default' secure={true} />
-          <LoginInputs labelText={'Confirm Password'} input={confirmPassword} setInput={setConfirmPassword} style={styles.input} color={'#D90429'} boardType='default' secure={true} />
+          <LoginInputs labelText={'Username'} input={username} setInput={setUsername} style={styles.input} color={'#3d3dac'} boardType='default' secure={false} />
+          <LoginInputs labelText={'Email'} input={email} setInput={setEmail} style={styles.input} color={'#3d3dac'} boardType='email-address' secure={false} />
+          <LoginInputs labelText={'Password'} input={password} setInput={setPassword} style={styles.input} color={'#3d3dac'} boardType='default' secure={true} />
+          <LoginInputs labelText={'Confirm Password'} input={confirmPassword} setInput={setConfirmPassword} style={styles.input} color={'#3d3dac'} boardType='default' secure={true} />
         </View>
 
         <View
           style={styles.buttonContainer}
         >
-          <TouchableOpacity onPress={() => { signUp(email, password, confirmPassword, username)}} style={styles.button}>
+          <TouchableOpacity onPress={() => { authUserSignUp(email, password, confirmPassword, username).then((value) => {if (value) { navigation.navigate('Info', {email: email, password: password, confirmPassword: confirmPassword, username: username}) }}) }} style={styles.button}>
+          {/* <TouchableOpacity onPress={() => { signUp(email, password, confirmPassword, username)}} style={styles.button}> */}
             <Text style={styles.buttonText}>Lets Go</Text>
           </TouchableOpacity>
 
@@ -72,7 +73,7 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#E63946',
+    backgroundColor: '#3d3dac',
   },
 
   signUpContainer: {
@@ -123,7 +124,6 @@ const styles = StyleSheet.create({
     borderBottomColor: '#D90429',
     color: '#FFF',
   },
-
   buttonContainer: {
     width: '70%',
     justifyContent: 'center',
@@ -132,7 +132,7 @@ const styles = StyleSheet.create({
   },
   button: {
     width: '100%',
-    backgroundColor: '#D90429',
+    backgroundColor: '#32328a',
     color: '#FFF',
     padding: 15,
     borderRadius: 10,
@@ -145,7 +145,7 @@ const styles = StyleSheet.create({
     color: '#e5e5e5'
   },
   buttonOutline: {
-    backgroundColor: '#E63946',
+    // backgroundColor: '#E63946',
     // marginTop: 10,
     // borderColor: '#D90429',
     // borderWidth: 3
@@ -155,6 +155,5 @@ const styles = StyleSheet.create({
     fontWeight: '500',
     fontSize: 14,
     color: '#FFF'
-
   }
 })

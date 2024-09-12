@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View, TouchableOpacity, TextInput} from 'react-native'
+import { StyleSheet, Text, View, TouchableOpacity, TextInput } from 'react-native'
 import React from 'react'
 import {
     AdjustmentsHorizontalIcon,
@@ -16,11 +16,11 @@ const SearchBar = () => {
     return (
         <View style={styles.searchContainer}>
             <View style={styles.Search}>
-                <MagnifyingGlassIcon size='25' color='#ECB8BC' style={styles.searchIcon} />
-                <TextInput placeholder='Math Tutor' keyboardType='default' style={styles.searchInput} />
+                <MagnifyingGlassIcon size='25' color='#3d3dac' style={styles.searchIcon} />
+                <TextInput placeholder='Sleep greater than 8' keyboardType='default' style={styles.searchInput} />
             </View>
             <TouchableOpacity>
-                <AdjustmentsHorizontalIcon size='30' color='#E63946' style={styles.filterIcon} onPress={logout}/>
+                <AdjustmentsHorizontalIcon size='30' color='#3d3dac' style={styles.filterIcon} onPress={logout} />
             </TouchableOpacity>
 
         </View>
@@ -54,8 +54,8 @@ const styles = StyleSheet.create({
         width: '80%',
         backgroundColor: '#FFFFFF',
         borderRadius: 10,
-        borderWidth: 1,
-        borderColor: '#E63946'
+        borderWidth: 2,
+        borderColor: '#3d3dac'
     },
     searchInput: {
         backgroundColor: '#FFFFFF',
